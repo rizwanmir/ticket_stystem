@@ -1,0 +1,3 @@
+PHP school project for building simple ticket system by using PHP, MYSQL and JavaScript.
+On the frontend side users can see the upcoming events and buy the ticket for the events
+On backend side admin can manage events and tickets by adding, updating and deleting.
