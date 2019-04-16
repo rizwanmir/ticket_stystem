@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Add Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        table {
+            margin-left: 30px;
+            width: 30%;
+        }
+        
+        a {
+            margin-left: 10px;
+            height: 25px;
+        }
+    </style>
+
+    <body>
+        <a href="index.php" class="badge badge-primary">Home Page</a>
+        <br/><br/>
+
+        <form action="add_ticket.php" method="post" name="form1">
+            <div class="form-group">
+                <table>
+                    <tr>
+                        <td>Event Id</td>
+                        <td><input type="text" name="eventId" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Seat Number</td>
+                        <td><input type="text" name="seatNumber" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Seat Location</td>
+                        <td><input type="text" name="seatLocation" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td><input type="text" name="price" class="form-control"></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" name="Submit" value="Add" class="btn btn-info" style="margin-top: 10px;"></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </body>
+
+</html>
