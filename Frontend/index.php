@@ -1,6 +1,6 @@
 <?php
 // database connection
-include "config.php";
+include "includes/config.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,42 +15,43 @@ include "config.php";
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
-    <div style="background-color:grey; width:100%">
-       <a href="index.php">
-           <button style="margin: 10px">HOME </button> 
-        </a> </div>
+    <?php include_once('includes/header.php'); ?>
+    
 <br/>
 <div class="container">
 <?php
-$query = "SELECT * FROM events";
-$statement = $pdo->prepare($query);
-$statement->execute();
-$result = $statement->fetchAll();
+// query to show the events
+    $query = "SELECT * FROM events";
+    $statement = $pdo->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll();
    foreach($result as $row)
    {
-   ?>
-<div class="col-md-3">
+?>
+    <div class="col-md-3">
     <div style="border:1px solid #333; border-radius:5px; padding:16px; text-align:center">
         <h4 class="text-info"><?php echo $row['eventName']; ?> </h4>
         <?php echo $row['eventDate'];
-          $id = $row['eventId'];
-          echo '<a href="tickets.php?eventId='.$id.'">
-          <input type="submit" name="see_tickets" style="margin-top:5px;" class="btn btn-success" value="See Tickets" />
-           </a>';
+            $id = $row['eventId'];
+            echo '<a href="tickets.php?eventId='.$id.'">
+            <input type="submit" name="see_tickets" style="margin-top:5px;" class="btn btn-success" value="See Tickets" />
+            </a>';
         ?>
         <br/>
-<?php
-if (new DateTime() > new DateTime($row['eventDate'])) {
-    echo  "Event expired";
-} else
-{
-    echo "Available";
-}
-?>
+        <?php
+        // if the event date is expired
+                if (new DateTime() > new DateTime($row['eventDate'])) {
+                    echo  "Event expired";
+                } else
+                {
+                    echo "Available";
+                }
+                ?>
+            </div>
         </div>
-    </div>
-    <?php
-} 
-?>
+        <?php
+    } 
+    ?>
+<?php include_once('includes/footer.php'); ?>
 </body>
 </html>

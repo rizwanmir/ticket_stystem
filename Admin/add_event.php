@@ -1,6 +1,6 @@
 <?php
 //Include database connection file
-include "../db/config.php";
+include "includes/config.php";
 
  
 if(isset($_POST['Submit'])) {

@@ -2,7 +2,7 @@
 <?php
 
 //include database connection
-include "../db/config.php";
+include "includes/config.php";
  
 //getting eventId from event list
 $eventId = $_GET['eventId'];

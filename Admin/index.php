@@ -1,6 +1,6 @@
 <?php
 //including database connection
-include "../db/config.php";
+include "includes/config.php";
  
 $result = $pdo->query("SELECT * FROM events JOIN vanue ON events.eventId = vanue.eventId"); 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 // include database connection
-include "../db/config.php";
+include "includes/config.php";
  
 if(isset($_POST['update']))
 {  

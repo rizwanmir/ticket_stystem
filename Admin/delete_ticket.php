@@ -1,7 +1,7 @@
 
 <?php
 // include connection file
-include "../db/config.php";
+include "includes/config.php";
 
 // use ticket class and delete method to delete the row from seats table
     $id = $_GET['seatId'];

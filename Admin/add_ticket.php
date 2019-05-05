@@ -1,6 +1,6 @@
 <?php
 //Include database connection file
-include "../db/config.php";
+include "includes/config.php";
  
 // use ticket class and create method to add ticket data
 if(isset($_POST['Submit'])) {
